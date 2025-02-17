@@ -1,4 +1,5 @@
 //your JS code here. If required.
+let arr = [1,2,3,4]
 let output = document.getElementById("output")
 function chainedPromise(arr){
 	return new Promise((resolve)=>{
@@ -21,6 +22,7 @@ function chainedPromise(arr){
 	})
 }
 window.onload = chainedPromise(arr)
+
 
 
 
