@@ -5,23 +5,20 @@ function chainedPromise(arr){
 	return new Promise((resolve)=>{
 		setTimeout(()=>{
 			const evenNumbers = arr.filter((num)=> num%2===0)
-			console.log(evenNumbers)
 			resolve(evenNumbers)
 		},1000)
 	})
 	.then((evenNumbers)=>{
-		output.innerHTML = evenNumbers.join(", ")
+		output.innerHTML = evenNumbers.join(",")
 		return new Promise((resolve)=>{
 			setTimeout(()=>{
 				const doubled = evenNumbers.map((num)=> num*2)
-				console.log(doubled)
 				resolve(doubled)
 			},2000)
 		})
 	})
 	.then((doubled)=>{
-		output.innerHTML = doubled.join(", ")
-		console.log(output.innerHTML)
+		output.innerHTML = doubled.join(",")
 	})
 }
 window.onload = chainedPromise(arr)
